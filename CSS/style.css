@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: aqua;
+}
+
+header {
+    height: 80px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+button {
+    padding: 5px 15px;
+    margin-right: 20px;
+    color: red;
+    cursor: pointer;
+    
+}
+
+.container {
+    width: 600px;
+    height: 600px;
+    margin: 60px auto;
+    
+    display: none;
+}
+
+.square {
+    float: left;
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+    border: 1px solid black;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.blue-click {
+    background-color: blue;
+}
+
+.active {
+    display: block;
+}
+
+
+/* bombe */
+
+.bombs {
+    background-color: red;
+}
