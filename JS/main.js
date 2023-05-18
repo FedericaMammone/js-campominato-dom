@@ -4,8 +4,10 @@ console.log(gridElement);
 const bottone = document.getElementById('bottone');
 console.log(bottone);
 
-const arrayNumRandBombe = [];
 
+
+arrayNumRandBombe = createNumRandBombe(16);
+let numeroCelle = 100;
 
 
 // aggiungere evento al bottone
@@ -14,7 +16,7 @@ function () {
 // quindi al click deve comparire la griglia
     document.getElementById('grid').classList.add("active")
     
-    arrayNumRandBombe = createNumRandBombe(1,16);
+    
     console.log(arrayNumRandBombe);
 
     }
@@ -31,7 +33,7 @@ function () {
 
 
 // creiamo i numeri ciclandoli
-for (let i = 1; i <= 100; i++) {
+for (let i = 1; i <= numeroCelle; i++) {
 
 
     const newSquare = createGridSquare();
@@ -69,9 +71,10 @@ function createGridSquare() {
 }
 
 // funzione che crea un array di numeri casuali in un range   
-function createNumRandBombe(min,max) {
-    while(arrayNumRandBombe.length < max) {
-        const nuovoNum = numRandomMinMax(min,max)
+function createNumRandBombe(numeroCelle) {
+    const arrayNumRandBombe = [];
+    while(arrayNumRandBombe.length < 16) {
+        const nuovoNum = numRandomMinMax(1,numeroCelle)
         if(!arrayNumRandBombe.includes(nuovoNum)){
             arrayNumRandBombe.push(nuovoNum)
         }
@@ -79,6 +82,9 @@ function createNumRandBombe(min,max) {
     console.log(arrayNumRandBombe);
 }
 
-function numRandomMinMax(min,max) {
-    return Math.floor(Math.random() * (max - min +1) + min);
+function numRandomMinMax(numeroCelle) {
+    return Math.floor(Math.random() * (numeroCelle - min +1) + min);
+    
 }
+
+console.log(numRandomMinMax);
